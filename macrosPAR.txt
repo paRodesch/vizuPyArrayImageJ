@@ -1,0 +1,24 @@
+macro "Macro Previous Frame [a]" {
+	Stack.getPosition(channel, slice, frame);
+	Stack.setPosition(channel, slice, frame-1);
+}
+
+macro "Macro Next Frame [d]" {
+	Stack.getPosition(channel, slice, frame);
+	Stack.setPosition(channel, slice, frame+1);
+}
+
+macro "Macro Previous Slice [s]" {
+	Stack.getPosition(channel, slice, frame);
+	Stack.setPosition(channel, slice-1, frame);
+}
+
+macro "Macro Next Slice [w]" {
+	Stack.getPosition(channel, slice, frame);
+	Stack.setPosition(channel, slice+1, frame);
+}
+
+macro "Macro Auto Contrast [q]" {
+	run("Brightness/Contrast...");
+   	run("Enhance Contrast", "saturated=0.35");
+}
